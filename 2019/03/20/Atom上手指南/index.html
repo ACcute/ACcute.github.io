@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/f32.jpg?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/f16.jpg?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #ff8033; /*��������ɫ*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #ff8c69; /*��Ӱ��ɫ*/
+    }
+    .pace .pace-activity {
+        border-top-color: #fa8072;    /*�ϱ߿���ɫ*/
+        border-left-color: #fa8072;    /*��߿���ɫ*/
+    }
+</style>
+
+  <meta name="description" content="Atom 是 Github 开源的文本编辑器，使用Web技术构建(基于Node-Webkit)，用户几乎能和 sublime 分庭抗礼，简洁易用功能强大。  Atom官方介绍: The hackable text editor  和其他文本编辑器比起来，它具有一下优点： 多平台支持（Windows、Mac、Linux） 界面美观、现代化，使用舒适 多文件管理（提供文件树列表的功能） 设置管理很方">
+<meta name="keywords" content="干货">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atom上手指南">
+<meta property="og:url" content="http://yoursite.com/2019/03/20/Atom上手指南/index.html">
+<meta property="og:site_name" content="Rem&#39;s  Blog">
+<meta property="og:description" content="Atom 是 Github 开源的文本编辑器，使用Web技术构建(基于Node-Webkit)，用户几乎能和 sublime 分庭抗礼，简洁易用功能强大。  Atom官方介绍: The hackable text editor  和其他文本编辑器比起来，它具有一下优点： 多平台支持（Windows、Mac、Linux） 界面美观、现代化，使用舒适 多文件管理（提供文件树列表的功能） 设置管理很方">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/03/16/5c8cff7966a0d.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/16/5c8d0481c7200.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/17/5c8e5d4a7ab02.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/17/5c8e576cf157d.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/16/5c8d0b62e879e.png">
+<meta property="og:image" content="https://github.com/atom-minimap/minimap/raw/master/resources/screenshot.png?raw=true">
+<meta property="og:image" content="http://www.hangge.com/blog_uploads/201604/2016042314092387296.gif">
+<meta property="og:image" content="https://i.github-camo.com/75520d0785add27aad25b9111d5fbfe49eb85214/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f4e696b68696c4b616c6967652f646f63626c6f636b722f6d61737465722f7265736f75726365732f66756e6374696f6e2d74656d706c6174652e676966">
+<meta property="og:image" content="https://i.github-camo.com/530eafbaf5b2bc0e6cf78666bbdb339cd65bf713/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f3339383839332f333532383131382f66303763323037322d303738622d313165342d393365392d6363623133333938323465362e676966">
+<meta property="og:image" content="https://raw.githubusercontent.com/file-icons/atom/6714706f268e257100e03c9eb52819cb97ad570b/preview.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/17/5c8e68302ef53.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/18/5c8fa3f742ae2.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/18/5c8faa7d9a8bf.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/18/5c8fadf17c9ce.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/18/5c8fadcf9acbe.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/03/20/5c924eb65eab4.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/03/20/5c9253213d4e0.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/20/5c925538ad4fa.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/20/5c9258390dc69.png">
+<meta property="og:image" content="https://i.github-camo.com/1f426a80987acd8f1c2f44236deb1aebec41649d/687474703a2f2f692e696d6775722e636f6d2f37433248326d772e706e67">
+<meta property="og:image" content="https://i.github-camo.com/7bce2151ed43f9e82c2257a77e9c49e381ed318c/687474703a2f2f692e696d6775722e636f6d2f6f7268497677532e706e67">
+<meta property="og:image" content="https://i.github-camo.com/8fd0e1f7bb10ea022ac0ea4128405c0371a0d155/687474703a2f2f692e696d6775722e636f6d2f663538464339752e706e67">
+<meta property="og:image" content="https://i.github-camo.com/880d572e4ff6a55e93be2868f2e55df3cff470bc/687474703a2f2f692e696d6775722e636f6d2f335951654470732e706e67">
+<meta property="og:image" content="https://i.github-camo.com/3e01446ebe799f5ecabfe85b0bd9f78208e65631/68747470733a2f2f6769746875622e636f6d2f6a65737365776565642f736574692d75692f7261772f6d61737465722f73637265656e73686f742e706e67">
+<meta property="og:image" content="https://i.github-camo.com/2716df1461e26d4cf41ff29ef8ef8d8fd50f5dd4/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f7261696e2d73796e7461782f6d61737465722f6173736574732f7469746c652e706e67">
+<meta property="og:image" content="https://i.github-camo.com/c0df8d05086ec9f6bf79a6b08f5fa7858fcd0fba/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f7261696e2d73796e7461782f6d61737465722f6173736574732f6578616d706c652e706e67">
+<meta property="og:image" content="https://i.github-camo.com/95e582cd175b0d521a6869c01a43f5ef15f4e748/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f726f636b65742d6461726b2d73796e7461782f6d61737465722f6173736574732f6c6f676f2e706e67">
+<meta property="og:image" content="https://i.github-camo.com/57bc390f87cd1cd18500b81979c96095be595047/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f726f636b65742d6461726b2d73796e7461782f6d61737465722f6173736574732f6578616d706c652d68746d6c2e706e67">
+<meta property="og:image" content="https://i.github-camo.com/c243aa4a227b24ab36a1c9ef423e96d27f767e72/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f707572652d6461726b2d73796e7461782f6d61737465722f6173736574732f6c6f676f2e706e67">
+<meta property="og:image" content="https://i.github-camo.com/8f33342b7cca60e559088a707650cc401a94cf69/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f707572652d6461726b2d73796e7461782f6d61737465722f6173736574732f6578616d706c652d68746d6c2e706e67">
+<meta property="og:image" content="https://i.github-camo.com/6a6f38039a4e4e02cb6c5253aadd3eb32a37bce0/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f707572652d6c696768742d73796e7461782f6d61737465722f6173736574732f6578616d706c652d6c6573732e706e67">
+<meta property="og:updated_time" content="2019-03-20T15:49:17.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Atom上手指南">
+<meta name="twitter:description" content="Atom 是 Github 开源的文本编辑器，使用Web技术构建(基于Node-Webkit)，用户几乎能和 sublime 分庭抗礼，简洁易用功能强大。  Atom官方介绍: The hackable text editor  和其他文本编辑器比起来，它具有一下优点： 多平台支持（Windows、Mac、Linux） 界面美观、现代化，使用舒适 多文件管理（提供文件树列表的功能） 设置管理很方">
+<meta name="twitter:image" content="https://i.loli.net/2019/03/16/5c8cff7966a0d.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/20/Atom上手指南/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Atom上手指南 | Rem's  Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rem's  Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Enjoy  Coding  Life</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/Atom上手指南/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rem">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/03/03/5c7bdc905427f.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rem's  Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Atom上手指南
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-20 23:45:21 / 修改时间：23:49:17" itemprop="dateCreated datePublished" datetime="2019-03-20T23:45:21+08:00">2019-03-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/03/20/Atom上手指南/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/20/Atom上手指南/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://i.loli.net/2019/03/16/5c8cff7966a0d.png" alt="Atom"></p>
+<p>Atom 是 Github 开源的文本编辑器，使用Web技术构建(基于Node-Webkit)，用户几乎能和 sublime 分庭抗礼，简洁易用功能强大。</p>
+<blockquote>
+<p>Atom官方介绍: The hackable text editor</p>
+</blockquote>
+<h3 id="和其他文本编辑器比起来，它具有一下优点："><a href="#和其他文本编辑器比起来，它具有一下优点：" class="headerlink" title="和其他文本编辑器比起来，它具有一下优点："></a>和其他文本编辑器比起来，它具有一下优点：</h3><ol>
+<li>多平台支持（Windows、Mac、Linux）</li>
+<li>界面美观、现代化，使用舒适</li>
+<li>多文件管理（提供文件树列表的功能）</li>
+<li>设置管理很方便，不用像Sublime需要自己手动安装第三方管理插件</li>
+<li>开源由GitHub打造，社区活跃，免费使用</li>
+<li>支持各种编程语言的代码高亮和代码补全（部分需要插件支持）</li>
+<li>原生Git的支持</li>
+<li>原生Markdown支持（实时预览、代码高亮，比Mou的代码高亮效果好很多）</li>
+<li>主题插件丰富</li>
+</ol>
+<p>本文将介绍Atom的安装、基本配置、功能介绍与美化。</p>
+<p><strong>关于下载</strong><br>介绍的所有主题、插件、配置包都打包在<a href="https://pan.baidu.com/s/1jtwU5_WJ_8aTHC_Fg_sBAw" target="_blank" rel="noopener">云盘</a>中，避免下载速度慢及科学上网因素(提取码：hp72)，下载解压后把<code>packages</code>文件夹放到<code>.atom</code>下，替换掉原来的atom文件夹即可</p>
+<hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://atom.io" target="_blank" rel="noopener">Atom官网&gt;&gt;&gt;</a> 目前可能需要科学上网? <a href="https://atom.io/download/windows_x64" target="_blank" rel="noopener">windows安装包</a></p>
+<p>它的另外一个优点在于<strong>自动化</strong>，安装过程只需要等待10mins左右，不需要手动操作<br>安装好后界面应该是这样的:</p>
+<p><img src="https://i.loli.net/2019/03/16/5c8d0481c7200.png" alt></p>
+<p>_取消上图中蓝色小勾启动时不会显示Guide_</p>
+<p><code>Ctrl+N</code>或者双击文件名栏创建一个新项目后，泥会发现神奇的东西：</p>
+<p><img src="https://i.loli.net/2019/03/17/5c8e5d4a7ab02.png" alt></p>
+<p>和大部分文件编辑器一样，Atom默认新建纯文本，点击右下角的<code>Plain Text</code>，就可以更改文件类型了。当然文件名的后缀在保存时也要注意，例如<code>a+b.cpp</code>中<code>.cpp</code>一定要严格准确，不然可能无法编译（详见下文）。图片中的灰线是换行提示线，超过此线网页显示可能会换行qwq</p>
+<p>安装扩展的话泥只需要打开<code>Settings</code></p>
+<p><img src="https://i.loli.net/2019/03/17/5c8e576cf157d.png" alt></p>
+<p>例如安装汉化包就直接搜索<code>chinese</code>下载(服务器在亚马逊上下载不当可能会咕咕)，还有很多社区插件可自行下载</p>
+<p><img src="https://i.loli.net/2019/03/16/5c8d0b62e879e.png" alt></p>
+<p>当然，你也可以选择直接下载打包好的插件（见上），里面涵盖了大部分常用插件和精美主题。</p>
+<p>_这里另外介绍一些好用的插件qwq_</p>
+<ol>
+<li><p><strong>minimap</strong><br> <a href="https://github.com/atom-minimap/minimap" target="_blank" rel="noopener">minimap</a>能够预览全部代码，同时移动到指定的文件位置。官方文档中配置方法十分详细清楚，这是展示图:<br> <img src="https://github.com/atom-minimap/minimap/raw/master/resources/screenshot.png?raw=true" alt></p>
+</li>
+<li><p><strong>atom-beautify</strong><br> 码风清奇？格式化泥的代码趴！<br> 支持HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C,CoffeeScript, TypeScript, SQL等语言。<br> 下载完成后可以通过<code>Crtl + Alt + B</code>或者点击菜单栏<code>Packages</code> -&gt; <code>Atom Beautify</code> -&gt; <code>Beautify</code>快速美化</p>
+</li>
+<li><p><strong>emmet</strong><br> 编辑HTML,CSS,LESS的快速神器，具体使用方法见<a href="https://github.com/emmetio/emmet-atom" target="_blank" rel="noopener">官方文档</a><br> 例如输入<code>ul&gt;li*5</code>，按下tab就会生成</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>pigments</strong><br> 样式显色插件qwq，适合前端开发。预览图:<br> <img src="http://www.hangge.com/blog_uploads/201604/2016042314092387296.gif" alt></p>
+</li>
+<li><p><strong>docblockr</strong><br> 快速写注释！让你的注释都变得格式化lol<br> <img src="https://i.github-camo.com/75520d0785add27aad25b9111d5fbfe49eb85214/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f4e696b68696c4b616c6967652f646f63626c6f636b722f6d61737465722f7265736f75726365732f66756e6374696f6e2d74656d706c6174652e676966" alt></p>
+</li>
+<li><p><strong>javascript-snippets</strong><br> java党代码长不加时限？试试定义缩写来自动补全:<br> <img src="https://i.github-camo.com/530eafbaf5b2bc0e6cf78666bbdb339cd65bf713/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f3339383839332f333532383131382f66303763323037322d303738622d313165342d393365392d6363623133333938323465362e676966" alt></p>
+</li>
+<li><p><strong>file-icons</strong><br> 为文件提供彩色图标，个人感觉特别好用，另使用seti-ui显示不了效果。<a href="https://github.com/file-icons/atom" target="_blank" rel="noopener">使用文档</a><br> <img src="https://raw.githubusercontent.com/file-icons/atom/6714706f268e257100e03c9eb52819cb97ad570b/preview.png" alt></p>
+</li>
+</ol>
+<h6 id="另外更多的插件可以在Atom官网中看到，地址-gt-gt-gt"><a href="#另外更多的插件可以在Atom官网中看到，地址-gt-gt-gt" class="headerlink" title="另外更多的插件可以在Atom官网中看到，地址&gt;&gt;&gt;"></a>另外更多的插件可以在Atom官网中看到，<a href="https://atom.io/packages" target="_blank" rel="noopener">地址&gt;&gt;&gt;</a></h6><hr>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ol>
+<li>编辑器基本设置</li>
+<li>快捷键设置</li>
+<li>编译设置</li>
+</ol>
+<p>编辑器的基本设置大部分在Settings调节，这里只简单介绍一些设置。</p>
+<p><img src="https://i.loli.net/2019/03/17/5c8e68302ef53.png" alt></p>
+<p>使用文件 / 文件夹右键菜单可以很方便的打开各种文档<br>同时，你也可以在文件 -&gt; 用户启动脚本下编写自己的脚本。</p>
+<p><img src="https://i.loli.net/2019/03/18/5c8fa3f742ae2.png" alt></p>
+<p>主题的选择可以在<code>Settings</code> -&gt; <code>Themes</code>下调节，分为UI主题和语法主题。通俗来讲，UI主题会应用到整个界面（除去文本编辑块和高亮），而语法主题则应用到文本编译一块。我们可以在主题下的<code>已安装的主题</code>里设置部分主题，以比较好看的UI<code>Material-ui</code>为例：</p>
+<p><img src="https://i.loli.net/2019/03/18/5c8faa7d9a8bf.png" alt><br><img src="https://i.loli.net/2019/03/18/5c8fadf17c9ce.png" alt><br><img src="https://i.loli.net/2019/03/18/5c8fadcf9acbe.jpg" alt></p>
+<p>关于快捷键，很多扩展也另附快捷键，在项目<code>README.md</code>中一般都可以看到，<strong>但也有可能引起冲突</strong></p>
+<p>这里是一些常用快捷键：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + N 新建文件</span><br><span class="line">Ctrl + O 打开文件</span><br><span class="line">Ctrl + G 跳转到某行</span><br><span class="line">Ctrl + R 进入变量、函数跳转面板。</span><br><span class="line">Ctrl + | 展示 / 隐藏目录树</span><br><span class="line">Ctrl + Alt + O 加载项目目录</span><br><span class="line">Crtl + Alt + B 格式化代码（需要安装atom-beautify） </span><br><span class="line">Ctrl + Shift + O 打开文件夹</span><br><span class="line">Ctrl + Shift + N 新建界面窗口</span><br><span class="line">Ctrl + Shift + T 重新加载上次项目</span><br><span class="line">Ctrl + Shift + W 关闭编辑器</span><br><span class="line">Ctrl + Shift + C 复制文档路径</span><br><span class="line">Ctrl + Shift + U 设置文件编码</span><br><span class="line">Crtl + Shift + M 开启Markdown实时预览</span><br><span class="line">Ctrl + Shift + P 全局搜索面板</span><br></pre></td></tr></table></figure></p>
+<p>编译设置这里主要讲在Atom上运行C++文件，需要插件<code>linter</code> <code>linter-gcc</code>（必需）以及<code>gcc-make-run</code>（或者其他运行插件）与编译环境<code>g++</code>。其他文本编辑器同理</p>
+<p><img src="https://i.loli.net/2019/03/20/5c924eb65eab4.jpg" alt></p>
+<p>在<code>linter-gcc</code>下的<code>setting</code>进行配置，将路径改为<code>gcc</code>或<code>g++</code>（根据编译环境）<br>同时<code>Lint on-the-fly</code>表示每次更改无需保存直接编译，当然不勾选此项可以培养随时保存代码的好习惯（</p>
+<p>然后就可以在<code>gcc-make-run</code>基础上直接<code>F6</code>或者右键 -&gt; <code>Compile Run</code>（热键冲突）</p>
+<p>$ $</p>
+<p>等等，，貌似出现了问题？？咋编译不了啊</p>
+<p>没错，咱需要<strong>搭建编译环境</strong></p>
+<p>如果泥之前是Dev-C++用户，那就再好不过惹，编译需要添加<code>g++</code>的<code>path</code>路径，如果通过MinGW下载不科学上网将十分缓慢。当然，你也可以先<a href="https://sourceforge.net/projects/orwelldevcpp/" target="_blank" rel="noopener">安装Dev-C++</a>，这将节省一些时间。</p>
+<p>在<code>Dev-C++</code>的文件目录下找到<code>MinGW</code>，然后在里面找到<code>bin</code>，复制文件路径，然后在你的用户环境变量<code>Path</code>里粘贴上（注意分号）就🆗了</p>
+<p><img src="https://i.loli.net/2019/03/20/5c9253213d4e0.png" alt></p>
+<p>_图中其他的文件路径（本文未涉及到的）与编译无关_</p>
+<p>当然，如果你不想安装<code>Dev-C++</code>的话，我们可以通过<code>MinGW</code>直接下载。<a href="jaist.dl.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe">下载地址&gt;&gt;&gt;</a></p>
+<p>打开安装包：</p>
+<p><img src="https://i.loli.net/2019/03/20/5c925538ad4fa.png" alt></p>
+<p>安装完成之后会出现MinGW Installation Manager对话框，勾选里面的<code>gcc</code>与<code>g++</code>。<br>然后与上文一样，在<code>Path</code>中粘贴一个<code>C:\MinGW\bin</code>，注意前面可能需要加分号（已经有文件路径）</p>
+<p>重启<code>Atom</code>，愉快地code趴~  这里再提醒一次请注意文件后缀哦，例如<code>A+B.cpp</code>不可以只保存为<code>A+B</code>。</p>
+<hr>
+<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>作为 Github 良心出品的文字编辑器，除了码代码外还有许多功能！毕竟是原生 Markdown 与 Git 是自家打造，Markdown 语法当然与 Github 语法完全同步。新建一个<code>.md</code>文件，你可以完美地书写与预览（<code>Ctrl + Shift + M</code>）</p>
+<p><img src="https://i.loli.net/2019/03/20/5c9258390dc69.png" alt></p>
+<p>当然，你也可以通过 Atom 玩转 Git，例如在编辑器的右下角或者菜单树中直观看到自己编辑代码的状态，当然还有其他很多功能qwq</p>
+<hr>
+<h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p>好马配好鞍，在使用时用上喜欢的主题皮肤获得双倍快乐！这里展示一些好看的UI主题与语法主题:</p>
+<p><img src="https://i.github-camo.com/1f426a80987acd8f1c2f44236deb1aebec41649d/687474703a2f2f692e696d6775722e636f6d2f37433248326d772e706e67" alt></p>
+<p><img src="https://i.github-camo.com/7bce2151ed43f9e82c2257a77e9c49e381ed318c/687474703a2f2f692e696d6775722e636f6d2f6f7268497677532e706e67" alt></p>
+<p><img src="https://i.github-camo.com/8fd0e1f7bb10ea022ac0ea4128405c0371a0d155/687474703a2f2f692e696d6775722e636f6d2f663538464339752e706e67" alt></p>
+<p><img src="https://i.github-camo.com/880d572e4ff6a55e93be2868f2e55df3cff470bc/687474703a2f2f692e696d6775722e636f6d2f335951654470732e706e67" alt></p>
+<h2 id="Seti-UI"><a href="#Seti-UI" class="headerlink" title="Seti-UI"></a>Seti-UI</h2><p><img src="https://i.github-camo.com/3e01446ebe799f5ecabfe85b0bd9f78208e65631/68747470733a2f2f6769746875622e636f6d2f6a65737365776565642f736574692d75692f7261772f6d61737465722f73637265656e73686f742e706e67" alt></p>
+<p><img src="https://i.github-camo.com/2716df1461e26d4cf41ff29ef8ef8d8fd50f5dd4/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f7261696e2d73796e7461782f6d61737465722f6173736574732f7469746c652e706e67" alt></p>
+<p><img src="https://i.github-camo.com/c0df8d05086ec9f6bf79a6b08f5fa7858fcd0fba/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f7261696e2d73796e7461782f6d61737465722f6173736574732f6578616d706c652e706e67" alt></p>
+<p><img src="https://i.github-camo.com/95e582cd175b0d521a6869c01a43f5ef15f4e748/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f726f636b65742d6461726b2d73796e7461782f6d61737465722f6173736574732f6c6f676f2e706e67" alt></p>
+<p><img src="https://i.github-camo.com/57bc390f87cd1cd18500b81979c96095be595047/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f726f636b65742d6461726b2d73796e7461782f6d61737465722f6173736574732f6578616d706c652d68746d6c2e706e67" alt></p>
+<p><img src="https://i.github-camo.com/c243aa4a227b24ab36a1c9ef423e96d27f767e72/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f707572652d6461726b2d73796e7461782f6d61737465722f6173736574732f6c6f676f2e706e67" alt></p>
+<p><img src="https://i.github-camo.com/8f33342b7cca60e559088a707650cc401a94cf69/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f707572652d6461726b2d73796e7461782f6d61737465722f6173736574732f6578616d706c652d68746d6c2e706e67" alt></p>
+<p><img src="https://i.github-camo.com/6a6f38039a4e4e02cb6c5253aadd3eb32a37bce0/68747470733a2f2f6d656469612e67697468756275736572636f6e74656e742e636f6d2f6d656469612f706f6c796d6f6f6e2f707572652d6c696768742d73796e7461782f6d61737465722f6173736574732f6578616d706c652d6c6573732e706e67" alt></p>
+<p>这些主题都有打包好，如果下载的是整合包的话直接在<code>Settings</code>中调qwq</p>
+<hr>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>祝使用愉快www<br>如果有问题珂直接评论 / 私信~</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/干货/" rel="tag"><i class="fa fa-tag"></i> 干货</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/16/题解-CF1055B/" rel="next" title="题解 CF1055B">
+                <i class="fa fa-chevron-left"></i> 题解 CF1055B
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/03/03/5c7bdc905427f.png" alt="Rem">
+            
+              <p class="site-author-name" itemprop="name">Rem</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#和其他文本编辑器比起来，它具有一下优点："><span class="nav-number">1.</span> <span class="nav-text">和其他文本编辑器比起来，它具有一下优点：</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number"></span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#另外更多的插件可以在Atom官网中看到，地址-gt-gt-gt"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">另外更多的插件可以在Atom官网中看到，地址&gt;&gt;&gt;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number"></span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能"><span class="nav-number"></span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美化"><span class="nav-number"></span> <span class="nav-text">美化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Seti-UI"><span class="nav-number"></span> <span class="nav-text">Seti-UI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">1.</span> <span class="nav-text">写在最后</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rem</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,0" opacity="0.5" zindex="-1" count="100" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'FylRfsODCSYCX7po583idA5J-gzGzoHsz',
+    appKey: 'IOwElXKT90JCFirB1c414T8y',
+    placeholder: 'Say something~ qwq',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+	<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+	<script type="text/javascript" src="/js/firework.js"></script>
+</head>
+
+<!--PageEndHtml Block End-->
+
+
