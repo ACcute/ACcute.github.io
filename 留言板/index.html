@@ -112,25 +112,21 @@
     }
 </style>
 
-  <meta name="description" content="题目传送&amp;gt;&amp;gt;&amp;gt; 本题理解题意就很好写了，模拟思路很好想。 注意一下「山」是沿$x$轴正方向蔓延的，并不是排成一列然后站在队首观望山峰的，也就是说我们预处理一下等腰直角三角形的左端点和右端点，不要被大的山所覆盖就好了。然后由于是等腰直角三角形，计算端点也没啥好说的 剩下的就是模拟了： 1234567891011121314151617181920212223242526272829">
-<meta name="keywords" content="模拟">
-<meta property="og:type" content="article">
-<meta property="og:title" content="题解 USACO Mountain View">
-<meta property="og:url" content="http://yoursite.com/2019/03/16/题解-USACO-Mountain-View/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="留言板">
+<meta property="og:url" content="http://yoursite.com/留言板/index.html">
 <meta property="og:site_name" content="Rem&#39;s  Blog">
-<meta property="og:description" content="题目传送&amp;gt;&amp;gt;&amp;gt; 本题理解题意就很好写了，模拟思路很好想。 注意一下「山」是沿$x$轴正方向蔓延的，并不是排成一列然后站在队首观望山峰的，也就是说我们预处理一下等腰直角三角形的左端点和右端点，不要被大的山所覆盖就好了。然后由于是等腰直角三角形，计算端点也没啥好说的 剩下的就是模拟了： 1234567891011121314151617181920212223242526272829">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T11:27:49.902Z">
+<meta property="og:updated_time" content="2019-04-06T14:30:02.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解 USACO Mountain View">
-<meta name="twitter:description" content="题目传送&amp;gt;&amp;gt;&amp;gt; 本题理解题意就很好写了，模拟思路很好想。 注意一下「山」是沿$x$轴正方向蔓延的，并不是排成一列然后站在队首观望山峰的，也就是说我们预处理一下等腰直角三角形的左端点和右端点，不要被大的山所覆盖就好了。然后由于是等腰直角三角形，计算端点也没啥好说的 剩下的就是模拟了： 1234567891011121314151617181920212223242526272829">
+<meta name="twitter:title" content="留言板">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/16/题解-USACO-Mountain-View/">
+  <link rel="canonical" href="http://yoursite.com/留言板/">
 
 
 
@@ -140,7 +136,7 @@
   };
 </script>
 
-  <title>题解 USACO Mountain View | Rem's  Blog</title>
+  <title>留言板 | Rem's  Blog</title>
   
 
 
@@ -306,197 +302,67 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/题解-USACO-Mountain-View/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rem">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/03/03/5c7bdc905427f.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rem's  Blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">题解 USACO Mountain View
+<h1 class="post-title" itemprop="name headline">留言板
 
-              
-            
-          </h1>
-        
+</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
+<div class="post-meta">
+  
+  
 
-            
-            
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
 
-              
-                
-              
+</div>
 
-              <time title="创建时间：2019-03-16 19:20:14 / 修改时间：19:27:49" itemprop="dateCreated datePublished" datetime="2019-03-16T19:20:14+08:00">2019-03-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/03/16/题解-USACO-Mountain-View/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/16/题解-USACO-Mountain-View/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p><a href="https://www.luogu.org/problemnew/show/P5199" target="_blank" rel="noopener">题目传送&gt;&gt;&gt;</a></p>
-<p>本题理解题意就很好写了，模拟思路很好想。</p>
-<p>注意一下「山」是沿$x$轴正方向蔓延的，并不是排成一列然后站在队首观望山峰的，也就是说我们预处理一下等腰直角三角形的左端点和右端点，不要被大的山所覆盖就好了。然后由于是等腰直角三角形，计算端点也没啥好说的</p>
-<p>剩下的就是模拟了：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> gcc getchar</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(T&amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>; <span class="keyword">bool</span> f=<span class="literal">true</span>; <span class="keyword">char</span> ck=gcc();</span><br><span class="line">    <span class="keyword">for</span>( ; ck&lt;<span class="string">'0'</span>||ck&gt;<span class="string">'9'</span>; ck=gcc()) <span class="keyword">if</span>(ck == <span class="string">'-'</span>) f=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>( ; ck&gt;=<span class="string">'0'</span>&amp;&amp;ck&lt;=<span class="string">'9'</span>; ck=gcc()) x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+(ck^<span class="number">48</span>);</span><br><span class="line">    x=f?x:-x; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100003</span></span><br><span class="line"><span class="keyword">int</span> n, maxr, res;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node&amp;other) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> (l != other.l) ? (l &lt; other.l) : (r &gt; other.r);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//按左端点作为关键字排序，如果一样那么只能看到大的山了</span></span><br><span class="line">&#125; ;</span><br><span class="line"></span><br><span class="line">Node a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y; read(x), read(y);</span><br><span class="line">        a[i].l=x-y, a[i].r=x+y;</span><br><span class="line">        <span class="comment">//简单的预处理，如果不是等腰直角三角形也一样作垂线用三角函数</span></span><br><span class="line">    &#125;</span><br><span class="line">    sort(a+<span class="number">1</span>, a+n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i)</span><br><span class="line">        <span class="keyword">if</span>(a[i].r &gt; maxr) ++res, maxr=a[i].r;</span><br><span class="line">    <span class="comment">//每一次更新最右端点，不超过maxr的则会被大山包含    </span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, res);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+      <div class="post-body">
+        
+        
+          
+        
+      </div>
+      
+      
       
     </div>
-
     
 
+
+
     
     
     
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/模拟/" rel="tag"><i class="fa fa-tag"></i> 模拟</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/16/题解-CF1133C/" rel="next" title="题解 CF1133C">
-                <i class="fa fa-chevron-left"></i> 题解 CF1133C
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/16/题解-CF1055B/" rel="prev" title="题解 CF1055B">
-                题解 CF1055B <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
   </div>
 
 
